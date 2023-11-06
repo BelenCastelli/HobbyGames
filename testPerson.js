@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var person_1 = require("./person");
+var person = new person_1.Person("Carlos", "española", "developer", 4);
+var person2 = new person_1.Person("Laura", "española", "director", 7);
+var person3 = new person_1.Person("Javier", "española", "tester", 5);
+var person4 = new person_1.Person("Paula", "argentina", "manager", 1);
+var person5 = new person_1.Person("Paula", "argentina", "manager", 1);
+console.log(person.printAll());
+console.log(person.toString());
+console.log(person.personTrue(person2));
+console.log(person4.personTrue(person5));
