@@ -2,7 +2,6 @@ import { Person } from "./person";
 import { Platform } from "./platform";
 import { Videogame } from "./videogame";
 import { HobbyGame } from "./hobbyGame";
-import { log } from "console";
 
 let person = new Person("Carlos", "española", "developer", 4)
 let person2 = new Person("David Kazi", "australiana", "director", 7)
@@ -25,27 +24,6 @@ let videogame3 = new Videogame("Frozen Flame", 2022, [person6], "británica",per
 
 let hobbyGame = new HobbyGame([videogame,videogame2,videogame3])
 
-// console.log(hobbyGame.priceTotalPlatform(platform2));
-// console.log(hobbyGame.priceTotal());
-// console.log(hobbyGame.videogameLanguage("español"));
-// console.log((hobbyGame.videogameLanguage2("español")));
-// console.log((hobbyGame.videogameDevelop(person)));
-// console.log(hobbyGame.videogamePlatLang(platform3,"inglés"));
-// console.log(hobbyGame.videogameScore());
-
-let hobbyGameJson = JSON.stringify(hobbyGame)
-const fs = require("fs")
-fs.writeFileSync("hobbyGameBBDD.json", hobbyGameJson)
-
-let hobbyGameJsonDATA = (fs.readFileSync("hobbyGameBBDD.json", "utf-8"))
-let hobbyGameBBDD = JSON.parse(hobbyGameJsonDATA)
+let hobbyGameBBDD = hobbyGame.getInstance("hobbyGameBBDD.Json")
 console.log(hobbyGameBBDD);
-
-
-
-
-
-
-
-
 

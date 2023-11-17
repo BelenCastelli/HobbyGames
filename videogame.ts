@@ -132,17 +132,19 @@ class Videogame {
         } return resultado
     }
 
-    public printAll ():void {
+    public toString():string {
+        let string:string = ""
         for(let propiedad in this){
             if(typeof this[propiedad] != "function"){
-                {console.log(`${propiedad}: ${this[propiedad]}`)}
-            }   
-        }
+               string += `${propiedad}: ${this[propiedad]}`
+            }
+        } return string
     }
 
-    public toString():string {
-        let string = ""
-        return string += this.printAll()
+    public printAll(): void {
+        console.log(this.toString);
     }
+
+
 }
  export {Videogame}

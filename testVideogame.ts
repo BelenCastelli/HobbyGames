@@ -16,19 +16,17 @@ let platform2 = new Platform("Xbox One X", 2019, "Microsoft", 64, 9, true, 1000,
 
 let videogame = new Videogame("Hollow Knight", 2017,[person, person6], "australiana", person2, ["inglés", "español", "francés", "italiano", "japonés"],[platform], 25, 9 )
 
-console.log(videogame.platformExist(platform2));
-console.log(videogame.platformExist(platform));
+// console.log(videogame.platformExist(platform2));
+// console.log(videogame.platformExist(platform));
 
-console.log(videogame.developExist(person6));
-console.log(videogame.developExist(person2));
-console.log(videogame.developExist(person7));
+// console.log(videogame.developExist(person6));
+// console.log(videogame.developExist(person2));
+// console.log(videogame.developExist(person7));
 
-console.log(videogame.languageExist("ruso"));
-console.log(videogame.languageExist("español"));
-
-console.log(videogame.printAll());
+// console.log(videogame.languageExist("ruso"));
+// console.log(videogame.languageExist("español"));
 console.log(videogame.toString());
-
+videogame.printAll();
 
 
 

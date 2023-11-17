@@ -71,15 +71,32 @@ class HobbyGame {
     }
 
     // Crear un método que devuelva todos los videojuegos cuya nota sea mayor o igual a 5
-    
+
     public videogameScore():Videogame[]{
         let videogamefilter:Videogame[] = this.videogames.filter((videojuego) =>
         videojuego.getScore() >= 5)
         return videogamefilter
     }
+
+    public JSONstring(): string{
+        return JSON.stringify(this.videogames);
+    }
+
+    public escribirEnFicheroJSON(nombreFichero: string){
+        const fs = require('fs');
+        fs.writeFileSync(nombreFichero, this.JSONstring());
+    }
+    
+    public getInstance(nombreFichero:string): HobbyGame {
+        const fs = require('fs');
+        let data = JSON.parse(fs.readFileSync(nombreFichero, 'utf-8'));
+            return new HobbyGame(data);
+    }
 }
 
 export {HobbyGame}
+
+
 
 
 
